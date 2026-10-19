@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bac4a8k5p45g6"]
+
+[node name="MainMenu" type="Control" unique_id=746649114]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=499607777]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1254902, 0.14901961, 0.16862746, 1)
+
+[node name="MainMenuContents" type="CenterContainer" parent="." unique_id=1013015910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MenuContentStacker" type="VBoxContainer" parent="MainMenuContents" unique_id=452327363]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="MainMenuContents/MenuContentStacker" unique_id=942719424]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "The Session"
+
+[node name="NewGameButton" type="Button" parent="MainMenuContents/MenuContentStacker" unique_id=415134098]
+layout_mode = 2
+text = "New Game"
+
+[node name="ContinueButton" type="Button" parent="MainMenuContents/MenuContentStacker" unique_id=121876021]
+layout_mode = 2
+text = "Continue"
+
+[node name="SettingsButton" type="Button" parent="MainMenuContents/MenuContentStacker" unique_id=526862847]
+layout_mode = 2
+text = "Settings
+"
+
+[node name="QuitButton" type="Button" parent="MainMenuContents/MenuContentStacker" unique_id=1810279724]
+layout_mode = 2
+text = "Quit"

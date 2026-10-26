@@ -10,10 +10,18 @@ config_version=5
 
 [application]
 
-config/name="The Session"
+config/name="Please, Continue"
 run/main_scene="uid://bac4a8k5p45g6"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://cm06v1uixvihe"
+
+[autoload]
+
+UiAudio="*uid://ctqihpm66o3ox"
 
 [display]
 

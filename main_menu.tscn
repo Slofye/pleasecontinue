@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bac4a8k5p45g6"]
 
 [ext_resource type="Script" uid="uid://bu5o8yieu0j4n" path="res://main_menu.gd" id="1_06t4h"]
-[ext_resource type="Texture2D" uid="uid://djoga6f7oivpp" path="res://office.jpg" id="2_7vrkn"]
-[ext_resource type="Script" uid="uid://hr680efyn6ri" path="res://settings_panel.gd" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://pb642ms14nyp" path="res://temp/Sunset Hospital Corridor in Pixel Art.png" id="2_8qtwp"]
+[ext_resource type="FontFile" uid="uid://biii0uhjarqsn" path="res://fonts/IBM_Plex_Mono/IBMPlexMono-SemiBoldItalic.ttf" id="3_nlkkf"]
+[ext_resource type="FontFile" uid="uid://dr0giu15scnu3" path="res://fonts/IBM_Plex_Mono/IBMPlexMono-Medium.ttf" id="4_nlkkf"]
+[ext_resource type="PackedScene" uid="uid://cjs6kq3r2mx34" path="res://settings_panel.tscn" id="5_0k4wn"]
 
 [sub_resource type="Shader" id="Shader_7vrkn"]
 code = "
@@ -23,10 +25,9 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7vrkn"]
 shader = SubResource("Shader_7vrkn")
-shader_parameter/pixel_size = 16.0000007125
+shader_parameter/pixel_size = 2.0000000475
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jix8l"]
-blend_mode = 2
 
 [node name="MainMenu" type="Control" unique_id=746649114]
 layout_mode = 3
@@ -45,11 +46,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_7vrkn")
+texture = ExtResource("2_8qtwp")
 expand_mode = 1
+stretch_mode = 6
 flip_h = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=499607777]
+modulate = Color(0, 0, 0, 0.27450982)
 material = SubResource("CanvasItemMaterial_jix8l")
 layout_mode = 1
 anchors_preset = 15
@@ -83,40 +87,53 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.9098039, 0.8627451, 0.78431374, 1)
-theme_override_font_sizes/font_size = 48
-text = "Please, Continue"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27450982)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("3_nlkkf")
+theme_override_font_sizes/font_size = 56
+text = "Please, Continue..."
 
 [node name="NewGameButton" type="Button" parent="MainMenuContents/VBoxContainer" unique_id=415134098]
 layout_mode = 2
 size_flags_horizontal = 0
 offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0.1, 0)
 offset_transform_visual_only = false
 theme_override_colors/font_color = Color(0.9098039, 0.8627451, 0.78431374, 1)
 theme_override_colors/font_pressed_color = Color(0.79607844, 0.44705883, 0.101960786, 1)
 theme_override_colors/font_hover_color = Color(0.8745098, 0.72156864, 0.42745098, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("4_nlkkf")
+theme_override_font_sizes/font_size = 28
 text = "New Game"
 flat = true
 
 [node name="ContinueButton" type="Button" parent="MainMenuContents/VBoxContainer" unique_id=121876021]
 layout_mode = 2
 size_flags_horizontal = 0
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0.1, 0)
 offset_transform_visual_only = false
 theme_override_colors/font_color = Color(0.9098039, 0.8627451, 0.78431374, 1)
 theme_override_colors/font_pressed_color = Color(0.79607844, 0.44705883, 0.101960786, 1)
 theme_override_colors/font_hover_color = Color(0.8745098, 0.72156864, 0.42745098, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("4_nlkkf")
+theme_override_font_sizes/font_size = 28
 text = "Continue"
 flat = true
 
 [node name="SettingsButton" type="Button" parent="MainMenuContents/VBoxContainer" unique_id=526862847]
 layout_mode = 2
 size_flags_horizontal = 0
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0.1, 0)
 offset_transform_visual_only = false
 theme_override_colors/font_color = Color(0.9098039, 0.8627451, 0.78431374, 1)
 theme_override_colors/font_pressed_color = Color(0.79607844, 0.44705883, 0.101960786, 1)
 theme_override_colors/font_hover_color = Color(0.8745098, 0.72156864, 0.42745098, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("4_nlkkf")
+theme_override_font_sizes/font_size = 28
 text = "Settings
 "
 flat = true
@@ -124,58 +141,28 @@ flat = true
 [node name="QuitButton" type="Button" parent="MainMenuContents/VBoxContainer" unique_id=1810279724]
 layout_mode = 2
 size_flags_horizontal = 0
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0.19, 0)
 offset_transform_visual_only = false
 theme_override_colors/font_color = Color(0.9098039, 0.8627451, 0.78431374, 1)
 theme_override_colors/font_pressed_color = Color(0.79607844, 0.44705883, 0.101960786, 1)
 theme_override_colors/font_hover_color = Color(0.8745098, 0.72156864, 0.42745098, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("4_nlkkf")
+theme_override_font_sizes/font_size = 28
 text = "Quit"
 flat = true
 
-[node name="MainMenuSettingsPanel" type="PanelContainer" parent="." unique_id=435021637]
-visible = false
-custom_minimum_size = Vector2(600, 400)
+[node name="SettingsPanel" parent="." unique_id=435021637 instance=ExtResource("5_0k4wn")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -300.0
 offset_top = -200.0
 offset_right = 300.0
 offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_fu7sn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuSettingsPanel" unique_id=1259437724]
-layout_mode = 2
-
-[node name="SettingsLabel" type="Label" parent="MainMenuSettingsPanel/VBoxContainer" unique_id=503086014]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 28
-text = "Settings"
-
-[node name="ToggleFullscreen" type="CheckButton" parent="MainMenuSettingsPanel/VBoxContainer" unique_id=1510262847]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-size_flags_stretch_ratio = 0.0
-text = "Fullscreen"
-alignment = 1
-
-[node name="BackButton" type="Button" parent="MainMenuSettingsPanel/VBoxContainer" unique_id=1444922042]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 10
-theme_override_font_sizes/font_size = 20
-text = "Back"
-
-[connection signal="pressed" from="MainMenuContents/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="MainMenuContents/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="MainMenuContents/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="toggled" from="MainMenuSettingsPanel/VBoxContainer/ToggleFullscreen" to="MainMenuSettingsPanel" method="_on_toggle_fullscreen_toggled"]
-[connection signal="pressed" from="MainMenuSettingsPanel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="MainMenuSettingsPanel/VBoxContainer/BackButton" to="MainMenuSettingsPanel" method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="MainMenuContents/VBoxContainer/NewGameButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MainMenuContents/VBoxContainer/NewGameButton" to="." method="_on_menu_button_pressed" binds= ["new_game"]]
+[connection signal="mouse_entered" from="MainMenuContents/VBoxContainer/ContinueButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_entered" from="MainMenuContents/VBoxContainer/SettingsButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MainMenuContents/VBoxContainer/SettingsButton" to="." method="_on_menu_button_pressed" binds= ["settings"]]
+[connection signal="mouse_entered" from="MainMenuContents/VBoxContainer/QuitButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MainMenuContents/VBoxContainer/QuitButton" to="." method="_on_menu_button_pressed" binds= ["quit"]]

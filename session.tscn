@@ -28,6 +28,7 @@ grow_vertical = 2
 text = "Your first client arrives..."
 
 [node name="SettingsPanel" parent="." unique_id=435021637 instance=ExtResource("2_l4xnq")]
+visible = false
 layout_mode = 1
 offset_left = -300.0
 offset_top = -200.0

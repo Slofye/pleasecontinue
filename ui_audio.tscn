@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ctqihpm66o3ox"]
+
+[ext_resource type="Script" uid="uid://b2x7xbnlwa1r6" path="res://ui_audio.gd" id="1_ydo11"]
+[ext_resource type="AudioStream" uid="uid://rj8fe6ls0vt0" path="res://hollow-room-11000-loop.wav" id="2_pc3ig"]
+[ext_resource type="AudioStream" uid="uid://4s76veo6nbu6" path="res://sounds/hover.wav" id="3_k266y"]
+[ext_resource type="AudioStream" uid="uid://fhhjfptoqvon" path="res://sounds/click.wav" id="4_cgac6"]
+[ext_resource type="AudioStream" uid="uid://cwygkdhcexcjw" path="res://sounds/toggle.mp3" id="5_dekfo"]
+
+[node name="UIAudio" type="Node" unique_id=221256617]
+script = ExtResource("1_ydo11")
+
+[node name="Menu Music" type="AudioStreamPlayer2D" parent="." unique_id=1702004732]
+stream = ExtResource("2_pc3ig")
+volume_db = 24.0
+autoplay = true
+bus = &"Music"
+
+[node name="HoverButtonSound" type="AudioStreamPlayer2D" parent="." unique_id=1534592096]
+stream = ExtResource("3_k266y")
+bus = &"SFX"
+
+[node name="ClickButtonSound" type="AudioStreamPlayer2D" parent="." unique_id=1947526404]
+stream = ExtResource("4_cgac6")
+pitch_scale = 1.2
+bus = &"SFX"
+
+[node name="ToggleButtonSound" type="AudioStreamPlayer2D" parent="." unique_id=2130624198]
+stream = ExtResource("5_dekfo")
+volume_db = 8.0
+bus = &"SFX"
